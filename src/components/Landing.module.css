@@ -1,0 +1,175 @@
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 24px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* ── 헤더 ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.star {
+  font-size: 18px;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.headerTitle {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+}
+
+/* ── 메인 ── */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  flex: 1;
+  min-height: 0;
+}
+
+.centerLabel {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--text-muted);
+  font-family: var(--sans);
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+/* ── 패널 그룹 ── */
+.panels {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── 패널 ── */
+.panel {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: opacity 0.25s, transform 0.25s;
+  cursor: pointer;
+}
+
+.panel[data-dim="true"] {
+  opacity: 0.3;
+}
+
+.panel:hover {
+  transform: scale(1.012);
+  z-index: 1;
+}
+
+.panelGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.panelOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.panelAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 2;
+}
+
+/* ── 패널 콘텐츠 ── */
+.panelContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 32px;
+  text-align: center;
+  width: 100%;
+}
+
+.panelOrg {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.2vw, 46px);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.panelCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: var(--gold);
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 2px;
+  font-family: var(--sans);
+  transition: box-shadow 0.2s;
+}
+
+.panel:hover .panelCta {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+
+/* ── 하단 설명 ── */
+.desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ── 모바일 ── */
+@media (max-width: 600px) {
+  .page { height: auto; min-height: 100vh; }
+  .panels {
+    flex-direction: column;
+    min-height: 480px;
+    gap: 12px;
+  }
+.panelOrg { font-size: clamp(26px, 7vw, 36px); }
+  .panel:hover { transform: none; }
+  .panel[data-dim="true"] { opacity: 1; }
+}

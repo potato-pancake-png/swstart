@@ -1,0 +1,103 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 40px 40px;
+  background: var(--surface);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.star {
+  font-size: 28px;
+  color: var(--gold);
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.name {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+.orgs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.org {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.org strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.orgDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copy {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.motto {
+  font-size: 12px;
+  color: var(--gold);
+  font-family: var(--serif);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 640px) {
+  .footer { padding: 48px 24px 32px; }
+  .top { flex-direction: column; }
+}
