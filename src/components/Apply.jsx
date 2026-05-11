@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import styles from './Apply.module.css'
 
-const FORM_ART = 'https://forms.gle/여기에예디대링크'
-const FORM_SW  = 'https://forms.gle/여기에소융대링크'
+const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
+const FORM_SW  = 'https://docs.google.com/forms/d/e/1FAIpQLSdM_IISf9i1TlP2vSwuovPOFQwE0w2aXVQTFfN2LH5AO03gRQ/viewform'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Landing.module.css'
 
-const FORM_ART = 'https://forms.gle/여기에예디대링크'
-const FORM_SW  = 'https://forms.gle/여기에소융대링크'
+const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
+const FORM_SW  = 'https://docs.google.com/forms/d/e/1FAIpQLSdM_IISf9i1TlP2vSwuovPOFQwE0w2aXVQTFfN2LH5AO03gRQ/viewform'
 
 export default function Landing() {
   const [hovered, setHovered] = useState(null)

@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navbar.module.css'
 
-const GOOGLE_FORM_URL = 'https://forms.gle/여기에구글폼링크입력'
+const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
+const FORM_SW  = 'https://docs.google.com/forms/d/e/1FAIpQLSdM_IISf9i1TlP2vSwuovPOFQwE0w2aXVQTFfN2LH5AO03gRQ/viewform'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -39,9 +40,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.cta}>
-          신청서 작성
-        </a>
+        <div className={styles.ctaGroup}>
+          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaArt}`}>
+            예디대 신청
+          </a>
+          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaSw}`}>
+            소융대 신청
+          </a>
+        </div>
 
         <button className={styles.burger} onClick={() => setOpen(v => !v)} aria-label="메뉴">
           <span className={open ? styles.barOpen1 : styles.bar} />
@@ -63,8 +69,11 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.mobileCta} onClick={() => setOpen(false)}>
-              신청서 작성
+            <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaArt}`} onClick={() => setOpen(false)}>
+              예디대 신청
+            </a>
+            <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaSw}`} onClick={() => setOpen(false)}>
+              소융대 신청
             </a>
           </motion.div>
         )}

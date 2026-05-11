@@ -81,22 +81,41 @@
   width: 100%;
 }
 
+.ctaGroup {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .cta {
   font-size: 13px;
   font-family: var(--sans);
   font-weight: 500;
   letter-spacing: 0.08em;
   padding: 9px 22px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
   text-decoration: none;
   border-radius: 2px;
   transition: background 0.25s, color 0.25s;
   flex-shrink: 0;
 }
 
-.cta:hover {
+.ctaArt {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.ctaArt:hover {
   background: var(--gold);
+  color: #000;
+}
+
+.ctaSw {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+
+.ctaSw:hover {
+  background: var(--blue);
   color: #000;
 }
 
@@ -147,24 +166,37 @@
 .mobileLink:hover { color: var(--text); }
 
 .mobileCta {
-  margin: 20px 40px;
+  margin: 10px 40px;
   text-align: center;
   padding: 12px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
   text-decoration: none;
   font-size: 14px;
   border-radius: 2px;
   transition: background 0.25s, color 0.25s;
 }
 
-.mobileCta:hover {
+.mobileCtaArt {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.mobileCtaArt:hover {
   background: var(--gold);
   color: #000;
 }
 
+.mobileCtaSw {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+}
+
+.mobileCtaSw:hover {
+  background: var(--blue);
+  color: #000;
+}
+
 @media (max-width: 768px) {
-  .links, .cta { display: none; }
+  .links, .ctaGroup { display: none; }
   .burger { display: flex; }
   .inner { padding: 18px 24px; }
 }
