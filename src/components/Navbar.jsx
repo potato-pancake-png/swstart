@@ -43,11 +43,11 @@ export default function Navbar() {
 
         <div className={styles.ctaGroup}>
           <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaArt}`}
-            onClick={() => track('apply_click', { college: '예디대', location: 'navbar' })}>
+            onClick={() => track('apply_click', { college: '예디대' })}>
             예디대 신청
           </a>
           <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaSw}`}
-            onClick={() => track('apply_click', { college: '소융대', location: 'navbar' })}>
+            onClick={() => track('apply_click', { college: '소융대' })}>
             소융대 신청
           </a>
         </div>
@@ -73,11 +73,11 @@ export default function Navbar() {
               </a>
             ))}
             <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaArt}`}
-              onClick={() => { setOpen(false); track('apply_click', { college: '예디대', location: 'navbar_mobile' }) }}>
+              onClick={() => { setOpen(false); track('apply_click', { college: '예디대' }) }}>
               예디대 신청
             </a>
             <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaSw}`}
-              onClick={() => { setOpen(false); track('apply_click', { college: '소융대', location: 'navbar_mobile' }) }}>
+              onClick={() => { setOpen(false); track('apply_click', { college: '소융대' }) }}>
               소융대 신청
             </a>
           </motion.div>

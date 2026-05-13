@@ -36,7 +36,7 @@ export default function Apply() {
 
         <motion.div className={styles.cards} custom={3} variants={fadeUp} initial="hidden" animate={inView ? 'show' : 'hidden'}>
           <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.art}`}
-            onClick={() => track('apply_click', { college: '예디대', location: 'apply_section' })}>
+            onClick={() => track('apply_click', { college: '예디대' })}>
             <div className={styles.cardHeader}>
               <span className={styles.badge} style={{ background: 'rgba(201,168,76,0.15)', color: 'var(--gold)', border: '1px solid rgba(201,168,76,0.3)' }}>예술디자인대학</span>
               <span className={styles.arrow}>→</span>
@@ -46,7 +46,7 @@ export default function Apply() {
           </a>
 
           <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.sw}`}
-            onClick={() => track('apply_click', { college: '소융대', location: 'apply_section' })}>
+            onClick={() => track('apply_click', { college: '소융대' })}>
             <div className={styles.cardHeader}>
               <span className={styles.badge} style={{ background: 'rgba(74,158,255,0.12)', color: 'var(--blue)', border: '1px solid rgba(74,158,255,0.3)' }}>소프트웨어융합대학</span>
               <span className={styles.arrow}>→</span>
