@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { track } from '@vercel/analytics'
 import styles from './Navbar.module.css'
 
 const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
@@ -41,10 +42,12 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.ctaGroup}>
-          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaArt}`}>
+          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaArt}`}
+            onClick={() => track('apply_click', { college: '예디대', location: 'navbar' })}>
             예디대 신청
           </a>
-          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaSw}`}>
+          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaSw}`}
+            onClick={() => track('apply_click', { college: '소융대', location: 'navbar' })}>
             소융대 신청
           </a>
         </div>
@@ -69,10 +72,12 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaArt}`} onClick={() => setOpen(false)}>
+            <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaArt}`}
+              onClick={() => { setOpen(false); track('apply_click', { college: '예디대', location: 'navbar_mobile' }) }}>
               예디대 신청
             </a>
-            <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaSw}`} onClick={() => setOpen(false)}>
+            <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaSw}`}
+              onClick={() => { setOpen(false); track('apply_click', { college: '소융대', location: 'navbar_mobile' }) }}>
               소융대 신청
             </a>
           </motion.div>
