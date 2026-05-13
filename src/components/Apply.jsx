@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { track } from '@vercel/analytics'
 import styles from './Apply.module.css'
 
 const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
@@ -36,7 +35,7 @@ export default function Apply() {
 
         <motion.div className={styles.cards} custom={3} variants={fadeUp} initial="hidden" animate={inView ? 'show' : 'hidden'}>
           <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.art}`}
-            onClick={() => track('apply_click', { college: '예디대' })}>
+            onClick={() => window.gtag('event', 'apply_click', { college: '예디대' })}>
             <div className={styles.cardHeader}>
               <span className={styles.badge} style={{ background: 'rgba(201,168,76,0.15)', color: 'var(--gold)', border: '1px solid rgba(201,168,76,0.3)' }}>예술디자인대학</span>
               <span className={styles.arrow}>→</span>
