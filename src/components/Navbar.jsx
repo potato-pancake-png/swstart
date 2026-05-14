@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navbar.module.css'
 
-const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
-const FORM_SW  = 'https://docs.google.com/forms/d/e/1FAIpQLSdM_IISf9i1TlP2vSwuovPOFQwE0w2aXVQTFfN2LH5AO03gRQ/viewform'
+const FORM_ART = '/apply/art'
+const FORM_SW  = '/apply/sw'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -41,12 +41,10 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.ctaGroup}>
-          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaArt}`}
-            onClick={() => window.gtag('event', 'apply_click', { college: '예디대' })}>
+          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaArt}`}>
             예디대 신청
           </a>
-          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaSw}`}
-            onClick={() => window.gtag('event', 'apply_click', { college: '소융대' })}>
+          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.cta} ${styles.ctaSw}`}>
             소융대 신청
           </a>
         </div>
@@ -72,11 +70,11 @@ export default function Navbar() {
               </a>
             ))}
             <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaArt}`}
-              onClick={() => { setOpen(false); window.gtag('event', 'apply_click', { college: '예디대' }) }}>
+              onClick={() => setOpen(false)}>
               예디대 신청
             </a>
             <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.mobileCta} ${styles.mobileCtaSw}`}
-              onClick={() => { setOpen(false); window.gtag('event', 'apply_click', { college: '소융대' }) }}>
+              onClick={() => setOpen(false)}>
               소융대 신청
             </a>
           </motion.div>

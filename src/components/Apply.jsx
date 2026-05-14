@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import styles from './Apply.module.css'
 
-const FORM_ART = 'https://docs.google.com/forms/d/e/1FAIpQLSePZeC9d249YENLf-gaiHvCEHy0RpJV2JCsSM_AXsyzJjwizQ/viewform'
-const FORM_SW  = 'https://docs.google.com/forms/d/e/1FAIpQLSdM_IISf9i1TlP2vSwuovPOFQwE0w2aXVQTFfN2LH5AO03gRQ/viewform'
+const FORM_ART = '/apply/art'
+const FORM_SW  = '/apply/sw'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -34,8 +34,7 @@ export default function Apply() {
         </motion.p>
 
         <motion.div className={styles.cards} custom={3} variants={fadeUp} initial="hidden" animate={inView ? 'show' : 'hidden'}>
-          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.art}`}
-            onClick={() => window.gtag('event', 'apply_click', { college: '예디대' })}>
+          <a href={FORM_ART} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.art}`}>
             <div className={styles.cardHeader}>
               <span className={styles.badge} style={{ background: 'rgba(201,168,76,0.15)', color: 'var(--gold)', border: '1px solid rgba(201,168,76,0.3)' }}>예술디자인대학</span>
               <span className={styles.arrow}>→</span>
@@ -44,8 +43,7 @@ export default function Apply() {
             <div className={styles.cardAction}>신청서 작성하기 (Google Form)</div>
           </a>
 
-          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.sw}`}
-            onClick={() => track('apply_click', { college: '소융대' })}>
+          <a href={FORM_SW} target="_blank" rel="noopener noreferrer" className={`${styles.card} ${styles.sw}`}>
             <div className={styles.cardHeader}>
               <span className={styles.badge} style={{ background: 'rgba(74,158,255,0.12)', color: 'var(--blue)', border: '1px solid rgba(74,158,255,0.3)' }}>소프트웨어융합대학</span>
               <span className={styles.arrow}>→</span>
